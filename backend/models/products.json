@@ -1,0 +1,15 @@
+[
+  { "id": "bed-flat-sheets", "name": "Flat Sheets", "category": "Bed", "tiers": ["STC Fine", "STC Luxe"] },
+  { "id": "bed-fitted-sheets", "name": "Fitted Sheets", "category": "Bed", "tiers": ["STC Fine", "STC Luxe"] },
+  { "id": "bed-pillowcases", "name": "Pillowcases", "category": "Bed", "tiers": ["STC Fine", "STC Luxe"] },
+  { "id": "bed-pillows", "name": "Pillows", "category": "Bed", "tiers": ["STC Fine", "STC Luxe"] },
+  { "id": "bed-duvet-covers", "name": "Duvet Covers", "category": "Bed", "tiers": ["STC Fine", "STC Luxe"] },
+  { "id": "bed-duvets", "name": "Duvets", "category": "Bed", "tiers": ["STC Fine", "STC Luxe"] },
+  { "id": "bed-comforters-quilts", "name": "Comforters / Quilts", "category": "Bed", "tiers": ["STC Fine", "STC Luxe"] },
+  { "id": "bath-bath-towels", "name": "Bath Towels", "category": "Bath", "tiers": ["STC Fine", "STC Luxe"] },
+  { "id": "bath-hand-towels", "name": "Hand Towels", "category": "Bath", "tiers": ["STC Fine", "STC Luxe"] },
+  { "id": "bath-face-towels", "name": "Face Towels", "category": "Bath", "tiers": ["STC Fine", "STC Luxe"] },
+  { "id": "bath-bath-mats", "name": "Bath Mats", "category": "Bath", "tiers": ["STC Fine", "STC Luxe"] },
+  { "id": "bath-floor-mats", "name": "Floor Mats", "category": "Bath", "tiers": ["STC Fine", "STC Luxe"] },
+  { "id": "bath-pool-towels", "name": "Pool Towels", "category": "Bath", "tiers": ["STC Fine", "STC Luxe"] }
+]

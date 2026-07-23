@@ -1,0 +1,113 @@
+/* =========================================================
+   STC LIVING — Responsive rules
+   Breakpoints: 1080 (tablet-lg), 860 (tablet), 620 (mobile)
+   ========================================================= */
+
+/* ---------- Tablet-large ---------- */
+@media (max-width:1080px){
+  .wrap{padding:0 28px;}
+  .about-grid{gap:40px;}
+  .why-grid{grid-template-columns:repeat(2,1fr);}
+  .coll-grid{grid-template-columns:repeat(3,1fr);}
+  .footer-grid{grid-template-columns:1.2fr 1fr 1fr;}
+  .footer-col:last-child{grid-column:span 3;}
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width:860px){
+  nav{padding:14px 24px;}
+  .navlinks{
+    position:fixed;top:73px;left:0;right:0;background:var(--espresso-deep);
+    flex-direction:column;gap:0;padding:10px 24px 20px;
+    border-bottom:1px solid rgba(186,141,95,.18);
+    transform:translateY(-12px);opacity:0;visibility:hidden;pointer-events:none;
+    transition:all .35s var(--ease);
+  }
+  .navlinks.open{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto;}
+  .navlinks a{padding:14px 0;border-bottom:1px solid rgba(186,141,95,.1);width:100%;}
+  .nav-cta{display:none;}
+  .menu-toggle{display:flex;}
+  .menu-toggle.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .menu-toggle.open span:nth-child(2){opacity:0;}
+  .menu-toggle.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+  .hero-banner{height:520px;}
+  .hero-banner-content{padding:0 40px;max-width:460px;}
+  .hero-banner-content h1{font-size:2.5rem;}
+  .hero-stats{gap:28px;flex-wrap:wrap;}
+
+  .about-grid{grid-template-columns:1fr;}
+  .about-visual{order:1;}
+  .about-visual img{height:340px;}
+
+  .why-grid{grid-template-columns:repeat(2,1fr);}
+  .coll-grid{grid-template-columns:repeat(2,1fr);}
+  .tier-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  .footer-col:last-child{grid-column:span 2;}
+
+  .cta-banner{padding:40px;flex-direction:column;text-align:center;}
+  .cta-banner h2{max-width:100%;}
+
+  .quote-block{padding:40px 28px;}
+  .quote-block p{font-size:1.5rem;}
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width:620px){
+  .wrap{padding:0 20px;}
+  .section{padding:64px 0;}
+  .section-head h2{font-size:1.9rem;}
+  .page-hero{padding:70px 0 56px;}
+  .page-hero h1{font-size:2.1rem;}
+
+  .hero-banner{height:auto;min-height:560px;}
+  .hero-banner::before{
+    background:linear-gradient(180deg,
+      rgba(226,225,213,.15) 0%,
+      rgba(226,225,213,.85) 55%,
+      var(--cream) 82%);
+  }
+  .hero-banner-content{
+    position:relative;top:auto;left:auto;transform:none;
+    padding:280px 22px 40px;max-width:100%;
+  }
+  .hero-banner-content h1{font-size:2.1rem;}
+  .hero-banner-content .hero-actions{flex-direction:column;align-items:stretch;}
+  .hero-banner-content .hero-actions .btn{width:100%;}
+  .hero-stats{gap:20px;}
+  .hero-stats div b{font-size:1.5rem;}
+
+  .why-grid{grid-template-columns:1fr;}
+  .coll-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+  .coll-tabs{gap:8px;}
+  .coll-tab{padding:9px 18px;font-size:.72rem;}
+
+  .contact-card{flex-direction:column;align-items:flex-start;}
+  .map-overlay{position:static;margin:16px;max-width:none;}
+  .map-frame{height:240px;}
+  .map-shell{max-width:100%;}
+
+  .about-stats{grid-template-columns:1fr;}
+  .about-stats div{border-right:none;border-bottom:1px solid var(--gold);padding-left:0;}
+  .about-stats div:last-child{border-bottom:none;padding-bottom:0;}
+  .about-stats div:last-child{border-bottom:none;}
+
+  .footer-grid{grid-template-columns:1fr;}
+  .footer-col:last-child{grid-column:span 1;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+
+  .quote-block p{font-size:1.25rem;}
+  .cta-banner h2{font-size:1.6rem;}
+
+  .wa-float{width:52px;height:52px;right:16px;bottom:16px;}
+  .wa-float svg{width:24px;height:24px;}
+}
+
+/* ---------- Small phones ---------- */
+@media (max-width:380px){
+  .brand-name{font-size:1.05rem;}
+  .coll-grid{grid-template-columns:1fr 1fr;}
+}
