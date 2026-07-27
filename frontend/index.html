@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Premium Hospitality Bed & Bath Linen — STC Living</title>
   <meta name="description" content="30+ years of hospitality experience. STC Living designs and manufactures premium bed and bath linen exclusively for hotels and resorts across India.">
-  <link rel="icon" href="assets/logo/stc_living_mark.svg">
+  <link rel="icon" href="assets/logo/stc_living_mark.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
@@ -18,12 +19,26 @@
       width: 100%;
       height: 100vh;
       min-height: 600px;
-      background: linear-gradient(to right, rgba(226,225,213,0.92) 20%, rgba(226,225,213,0.72) 40%, rgba(226,225,213,0) 100%), url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1600&auto=format&fit=crop') no-repeat center center;
-      background-size: cover;
       display: flex;
       align-items: center;
       justify-content: flex-start;
       padding: 0 10%;
+      overflow: hidden;
+    }
+    .fullscreen-hero .hero-bg-img{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+    .fullscreen-hero .hero-bg-overlay{
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to right, rgba(226,225,213,0.92) 20%, rgba(226,225,213,0.72) 40%, rgba(226,225,213,0) 100%);
     }
 
     .hero-content {
@@ -100,11 +115,18 @@
 
     @media (max-width: 860px){
       .fullscreen-hero{ padding: 0 6%; height: auto; min-height: 100vh; }
+      .fullscreen-hero .hero-bg-overlay{
+        background: linear-gradient(180deg,
+          rgba(226,225,213,0.95) 0%,
+          rgba(226,225,213,0.88) 42%,
+          rgba(226,225,213,0.25) 68%,
+          rgba(226,225,213,0) 100%);
+      }
       .hero-content h1{ font-size: 2.6rem; }
       .hero-content .tagline{ font-size: 1.15rem; }
     }
     @media (max-width: 480px){
-      .fullscreen-hero{ padding: 120px 6% 60px; align-items: flex-start; }
+      .fullscreen-hero{ padding: 110px 6% 60px; align-items: flex-start; }
       .hero-content h1{ font-size: 2.1rem; }
       .hero-buttons{ flex-direction: column; align-items: stretch; }
       .hero-buttons a{ text-align: center; }
@@ -117,7 +139,7 @@
   <nav>
     <a href="#home" class="brand">
       <img src="assets/logo/stc_living_mark.svg" alt="STC Living logo">
-      <span class="brand-name">STC <b>LIVING</b></span>
+      <span class="brand-name"></span>
     </a>
     <div class="navlinks">
       <a href="#home">Home</a>
@@ -136,6 +158,8 @@
 
   <!-- MATCHING SCREENSHOT HERO SECTION -->
   <section class="fullscreen-hero" id="home">
+    <img class="hero-bg-img" src="assets/images/hero_bed_linen.png" alt="Premium hospitality bed and bath linen">
+    <div class="hero-bg-overlay"></div>
     <div class="hero-content">
       <h1>Premium<br>Hospitality<br>Bed & Bath Linen</h1>
       <div class="tagline">Designed for Hospitality. Crafted for Comfort.</div>
@@ -161,9 +185,9 @@
         <p>From boutique hotels to large hospitality groups, we create dependable linen solutions tailored to every property.</p>
 
         <div class="about-stats">
-          <div><b>30+</b><span>Years in hospitality textiles</span></div>
-          <div><b>100%</b><span>Premium cotton fabrics</span></div>
-          <div><b>600TC</b><span>Up to, in Luxe Linen</span></div>
+          <div><b>30+</b><span>Years of Hospitality Expertise</span></div>
+          <div><b>100%</b><span>Premium Cotton Fabrics</span></div>
+          <div><b>Up to 600TC</b><span>Luxury Bedding Collections</span></div>
         </div>
       </div>
     </div>
@@ -173,7 +197,7 @@
   <section class="section" id="collection">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Our Portfolio</span>
+        <span class="eyebrow">OUR COLLECTIONS</span>
         <h2>Complete Linen Solutions</h2>
         <div class="stitch mt-2"></div>
       </div>
@@ -187,25 +211,25 @@
       <div data-group="bed">
         <h3 class="coll-group-title">Bed Linen</h3>
         <div class="coll-grid">
-          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/flat_sheets.jpg" alt="Flat sheets"></div><div class="coll-label">Flat Sheets</div></div>
-          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/fitted_sheets.jpg" alt="Fitted sheets"></div><div class="coll-label">Fitted Sheets</div></div>
-          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/pillowcases.jpg" alt="Pillowcases"></div><div class="coll-label">Pillowcases</div></div>
-          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/pillows.jpg" alt="Pillows"></div><div class="coll-label">Pillows</div></div>
-          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/duvet_covers.jpg" alt="Duvet covers"></div><div class="coll-label">Duvet Covers</div></div>
-          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/duvets.jpg" alt="Duvets"></div><div class="coll-label">Duvets</div></div>
-          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/comforters_and_quilts.jpg" alt="Comforters and quilts"></div><div class="coll-label">Comforters / Quilts</div></div>
+          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/BED_Linen/Flat_sheet.jpg" alt="Flat sheets"></div><div class="coll-label">Flat Sheets</div></div>
+          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/BED_Linen/Fitted_sheets.jpg" alt="Fitted sheets"></div><div class="coll-label">Fitted Sheets</div></div>
+          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/BED_Linen/pillowcases.jpg" alt="Pillowcases"></div><div class="coll-label">Pillowcases</div></div>
+          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/BED_Linen/pillows.jpg" alt="Pillows"></div><div class="coll-label">Pillows</div></div>
+          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/BED_Linen/duvvet_covers.jpg" alt="Duvet covers"></div><div class="coll-label">Duvet Covers</div></div>
+          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/BED_Linen/duvvets.jpg" alt="Duvets"></div><div class="coll-label">Duvets</div></div>
+          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/BED_Linen/comforters_quilts.jpg" alt="Comforters and quilts"></div><div class="coll-label">Comforters / Quilts</div></div>
         </div>
       </div>
 
       <div data-group="bath">
         <h3 class="coll-group-title">Bath Linen</h3>
         <div class="coll-grid">
-          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/bath_towels.jpg" alt="Bath towels"></div><div class="coll-label">Bath Towels</div></div>
-          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/hand_towels.jpg" alt="Hand towels"></div><div class="coll-label">Hand Towels</div></div>
-          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/face_towels.jpg" alt="Face towels"></div><div class="coll-label">Face Towels</div></div>
-          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/bath_mats.jpg" alt="Bath mats"></div><div class="coll-label">Bath Mats</div></div>
-          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/floor_mats.jpg" alt="Floor mats"></div><div class="coll-label">Floor Mats</div></div>
-          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/pool_towels.jpg" alt="Pool towels"></div><div class="coll-label">Pool Towels</div></div>
+          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/BATH_Linen/bath_towels.jpg" alt="Bath towels"></div><div class="coll-label">Bath Towels</div></div>
+          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/BATH_Linen/hand_towels.jpg" alt="Hand towels"></div><div class="coll-label">Hand Towels</div></div>
+          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/BATH_Linen/face_towels.jpg" alt="Face towels"></div><div class="coll-label">Face Towels</div></div>
+          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/BATH_Linen/bath_mats.jpg" alt="Bath mats"></div><div class="coll-label">Bath Mats</div></div>
+          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/BATH_Linen/floor_mats.jpg" alt="Floor mats"></div><div class="coll-label">Floor Mats</div></div>
+          <div class="coll-card"><div class="coll-thumb"><img src="assets/images/BATH_Linen/pool_towels.jpg" alt="Pool towels"></div><div class="coll-label">Pool Towels</div></div>
         </div>
       </div>
     </div>
@@ -216,7 +240,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Two Tiers, One Standard of Reliability</span>
-        <h2>Choose the finish for your property</h2>
+        <h2>Choose the Perfect Linen Collections</h2>
         <div class="stitch mt-2"></div>
       </div>
       <div class="tier-grid">
@@ -239,103 +263,194 @@
   </section>
 
   <!-- WHY US -->
-  <section class="section why">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Why STC Living?</span>
-        <h2>Reasons hotels choose us</h2>
-        <div class="stitch mt-2"></div>
-      </div>
-      <div class="why-grid" style="grid-template-columns:repeat(3,1fr);">
-        <div class="why-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 21V8l9-5 9 5v13H3Z"/></svg></div><h3>Built for Hospitality</h3><p>Purpose-built specifications for hotel and resort operations.</p></div>
-        <div class="why-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 3s2 1 2 3a4 4 0 0 1-8 0c0-2 2-3 2-3s-2-1-2-3a4 4 0 0 1 4-4Z"/></svg></div><h3>Premium 100% Cotton</h3><p>Superior comfort and softness guests notice immediately.</p></div>
-        <div class="why-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="13" r="5"/></svg></div><h3>Commercial Laundry Durable</h3><p>Engineered to withstand frequent, high-heat washing cycles.</p></div>
-        <div class="why-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div><h3>Consistent Quality and Supply</h3><p>Every order matches the last — batch after batch.</p></div>
-        <div class="why-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h3>Custom Sizes &amp; Specs</h3><p>Tailored to your property's unique bedding and bath programs.</p></div>
-        <div class="why-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg></div><h3>Responsive After-Sales Support</h3><p>A team that stays with you after the order ships.</p></div>
-      </div>
+<section class="section why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why STC Living?</span>
+      <h2>Built Around Hospitality Excellence</h2>
+      <div class="stitch mt-2"></div>
     </div>
-  </section>
-
-  <!-- CONTACT & ENQUIRY SECTION -->
-  <section class="section" id="contact" style="background: #E2E1D5; padding: 80px 0; font-family: 'Georgia', serif;">
-    <div class="wrap" style="max-width: 1140px; margin: 0 auto; padding: 0 24px;">
-
-      <!-- Section Header -->
-      <div class="section-head reveal" style="text-align: center; margin-bottom: 56px;">
-        <span class="eyebrow" style="letter-spacing: 3px; text-transform: uppercase; font-size: 0.85rem; color: #BA8D5F; font-weight: 700; display: block; margin-bottom: 8px;">Get In Touch</span>
-        <h2 style="font-family:'Georgia',serif; font-size: 2.4rem; color: #442F23; font-weight: 700; margin: 0;">Contact Us</h2>
-        <div class="stitch" style="width: 40px; height: 2px; background: #BA8D5F; margin: 16px auto 0;"></div>
+    <div class="why-grid" style="grid-template-columns:repeat(3,1fr);">
+      
+      <!-- Card 1 -->
+      <div class="why-card">
+        <div class="ic">
+          <img class="ic-default" src="assets/6-icons/Light Brown/Built for Hospitality.svg" alt="Built for Hospitality">
+          <img class="ic-hover" src="assets/6-icons/Built for Hospitality.svg" alt="Built for Hospitality">
+        </div>
+        <h3>Built for Hospitality</h3>
+        <p>Purpose-built specifications for hotel and resort operations.</p>
       </div>
 
-      <!-- Head Office / WhatsApp (left) + Enquiry Form (right) -->
-      <div class="contact-grid">
+      <!-- Card 2 -->
+      <div class="why-card">
+        <div class="ic">
+          <img class="ic-default" src="assets/6-icons/Light Brown/Premium_Cotton.svg" alt="Premium 100% Cotton">
+          <img class="ic-hover" src="assets/6-icons/Premium_Cotton.svg" alt="Premium 100% Cotton">
+        </div>
+        <h3>Premium 100% Cotton</h3>
+        <p>Superior comfort and softness guests notice immediately.</p>
+      </div>
 
-        <!-- LEFT: Head Office card + WhatsApp card, stacked -->
-        <div class="reveal-left" style="display: flex; flex-direction: column; gap: 24px;">
+      <!-- Card 3 -->
+      <div class="why-card">
+        <div class="ic">
+          <img class="ic-default" src="assets/6-icons/Light Brown/Commercial Laundry Durable.svg" alt="Commercial Laundry Durable">
+          <img class="ic-hover" src="assets/6-icons/Commercial Laundry Durable.svg" alt="Commercial Laundry Durable">
+        </div>
+        <h3>Commercial Laundry Durable</h3>
+        <p>Engineered to withstand frequent, high-heat washing cycles.</p>
+      </div>
 
-          <!-- Head Office Details card -->
-          <div style="background: #E2E1D5; border: 1px solid #442F23; padding: 32px; border-radius: 8px; box-shadow: 0 10px 28px -16px rgba(68,47,35,0.35);">
-            <h3 style="font-family:'Georgia',serif; font-size: 1.4rem; color: #442F23; margin: 0 0 20px 0; font-weight: 700;">Head Office Details</h3>
+      <!-- Card 4 -->
+      <div class="why-card">
+        <div class="ic">
+          <img class="ic-default" src="assets/6-icons/Light Brown/Consistent Quality and Supply.svg" alt="Consistent Quality and Supply">
+          <img class="ic-hover" src="assets/6-icons/Consistent Quality and Supply.svg" alt="Consistent Quality and Supply">
+        </div>
+        <h3>Consistent Quality and Supply</h3>
+        <p>Every order matches the last — batch after batch.</p>
+      </div>
 
-            <div style="display: flex; margin-bottom: 14px; font-size: 0.95rem; line-height: 1.5;">
-              <span style="width: 90px; flex-shrink:0; color: #BA8D5F; font-weight: 700; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.5px; margin-top: 3px;">Phone</span>
-              <span style="color: #442F23; font-weight: 500;">+91 91000 98038</span>
+      <!-- Card 5 -->
+      <div class="why-card">
+        <div class="ic">
+          <img class="ic-default" src="assets/6-icons/Light Brown/Custom Sizes & Specs.svg" alt="Custom Sizes &amp; Specs">
+          <img class="ic-hover" src="assets/6-icons/Custom Sizes & Specs.svg" alt="Custom Sizes &amp; Specs">
+        </div>
+        <h3>Custom Sizes &amp; Specs</h3>
+        <p>Tailored to your property's unique bedding and bath programs.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="why-card">
+        <div class="ic">
+          <img class="ic-default" src="assets/6-icons/Light Brown/Responsive After-Sales Support.svg" alt="Responsive After-Sales Support">
+          <img class="ic-hover" src="assets/6-icons/Responsive After-Sales Support.svg" alt="Responsive After-Sales Support">
+        </div>
+        <h3>Responsive After-Sales Support</h3>
+        <p>A team that stays with you after the order ships.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- CONTACT & ENQUIRY SECTION -->
+  <section class="section" id="contact">
+    <div class="wrap">
+
+      <div class="section-head reveal">
+        <span class="eyebrow">Get In Touch</span>
+        <h2>Contact Us</h2>
+        <div class="stitch mt-2"></div>
+        <p>Have a question or need more information? We'd love to hear from you.</p>
+      </div>
+
+      <div class="contact-grid-v2">
+
+        <!-- LEFT COLUMN -->
+        <div class="contact-left reveal-left">
+
+          <div class="git-card">
+            <h3>Get in Touch</h3>
+
+            <div class="git-row">
+              <span class="git-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.9 2Z"/></svg></span>
+              <div><b>Phone</b><p>+91 91000 98038</p></div>
             </div>
 
-            <div style="display: flex; margin-bottom: 14px; font-size: 0.95rem; line-height: 1.5;">
-              <span style="width: 90px; flex-shrink:0; color: #BA8D5F; font-weight: 700; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.5px; margin-top: 3px;">Web</span>
-              <a href="https://www.stcliving.in" style="color: #442F23; text-decoration: underline; font-weight: 500;">www.stcliving.in</a>
+            <div class="git-row">
+              <span class="git-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
+              <div><b>Email</b><p>info@stcliving.in</p></div>
             </div>
 
-            <div style="display: flex; font-size: 0.95rem; line-height: 1.6;">
-              <span style="width: 90px; flex-shrink:0; color: #BA8D5F; font-weight: 700; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.5px; margin-top: 3px;">Address</span>
-              <span style="color: rgba(68,47,35,0.85);">Door No. 2-168, NH-16 Service Road, Opp. Murugan Hotel, Kaza Village, Mangalagiri Mandal, Guntur District, Andhra Pradesh – 522503</span>
+            <div class="git-row">
+              <span class="git-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg></span>
+              <div><b>Website</b><p>www.stcliving.in</p></div>
+            </div>
+
+            <div class="git-row">
+              <span class="git-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <div><b>Address</b><p>Door No. 2-168, NH-16 Service Road, Opp. Murugan Hotel, Kaza Village, Mangalagiri Mandal, Guntur District, Andhra Pradesh – 522503</p></div>
             </div>
           </div>
 
-          <!-- Chat on WhatsApp card -->
-          <div style="background: #442F23; padding: 32px; border-radius: 8px; display: flex; flex-direction: column; align-items: flex-start;">
-            <h4 style="margin: 0 0 8px 0; color: #E2E1D5; font-family:'Georgia',serif; font-size: 1.15rem; font-weight: 700;">Need Instant Assistance?</h4>
-            <p style="margin: 0 0 20px 0; font-size: 0.9rem; color: rgba(226,225,213,0.75); line-height: 1.5;">Connect directly with our support desk on WhatsApp for prompt quotations.</p>
-            <a href="#" data-whatsapp="Hello STC Living, I'd like to enquire about your hospitality linen collection." style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border: 1px solid #BA8D5F; color: #E2E1D5; text-decoration: none; border-radius: 4px; font-family:'Georgia',serif; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px;">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <div class="wa-card-v2">
+            <div class="wa-top">
+              <span class="wa-ic">
+                <!-- Official WhatsApp Logo Header -->
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.763.459 3.483 1.332 5.002L2 22l5.127-1.339a9.932 9.932 0 0 0 4.882 1.282h.003c5.505 0 9.988-4.478 9.989-9.984 0-2.666-1.037-5.172-2.923-7.058A9.919 9.919 0 0 0 12.012 2zm0 18.312h-.002a8.272 8.272 0 0 1-4.218-1.162l-.302-.178-3.132.818.835-3.045-.198-.313a8.274 8.274 0 0 1-1.272-4.448c.001-4.57 3.719-8.288 8.291-8.288 2.214 0 4.296.863 5.86 2.428a8.243 8.243 0 0 1 2.425 5.862c-.001 4.571-3.719 8.289-8.286 8.289zm4.542-6.208c-.249-.125-1.472-.726-1.701-.809-.228-.083-.394-.125-.56.125-.166.249-.643.809-.788.975-.145.166-.29.187-.539.062a6.792 6.792 0 0 1-2.001-1.233 7.488 7.488 0 0 1-1.385-1.724c-.145-.249-.015-.384.109-.508.112-.112.249-.29.373-.435.124-.145.166-.249.249-.415.083-.166.042-.311-.021-.435-.062-.125-.56-1.349-.767-1.847-.202-.486-.408-.42-.56-.428l-.477-.008c-.166 0-.435.062-.663.311s-.871.851-.871 2.075.892 2.407 1.016 2.573c.124.166 1.756 2.681 4.254 3.76.594.257 1.058.411 1.42.526.597.19 1.14.163 1.569.099.479-.071 1.472-.602 1.68-1.183.207-.581.207-1.079.145-1.183-.062-.104-.228-.166-.477-.291z"/>
+                </svg>
+              </span>
+              <div>
+                <h4>Need Immediate Assistance?</h4>
+                <p>Chat with our team on WhatsApp for quick support.</p>
+              </div>
+            </div>
+            
+            <a href="#" class="wa-btn-v2" data-whatsapp="Hello STC Living, I'd like to enquire about your hospitality linen collection.">
+              <!-- Official WhatsApp Logo Button -->
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.763.459 3.483 1.332 5.002L2 22l5.127-1.339a9.932 9.932 0 0 0 4.882 1.282h.003c5.505 0 9.988-4.478 9.989-9.984 0-2.666-1.037-5.172-2.923-7.058A9.919 9.919 0 0 0 12.012 2zm0 18.312h-.002a8.272 8.272 0 0 1-4.218-1.162l-.302-.178-3.132.818.835-3.045-.198-.313a8.274 8.274 0 0 1-1.272-4.448c.001-4.57 3.719-8.288 8.291-8.288 2.214 0 4.296.863 5.86 2.428a8.243 8.243 0 0 1 2.425 5.862c-.001 4.571-3.719 8.289-8.286 8.289zm4.542-6.208c-.249-.125-1.472-.726-1.701-.809-.228-.083-.394-.125-.56.125-.166.249-.643.809-.788.975-.145.166-.29.187-.539.062a6.792 6.792 0 0 1-2.001-1.233 7.488 7.488 0 0 1-1.385-1.724c-.145-.249-.015-.384.109-.508.112-.112.249-.29.373-.435.124-.145.166-.249.249-.415.083-.166.042-.311-.021-.435-.062-.125-.56-1.349-.767-1.847-.202-.486-.408-.42-.56-.428l-.477-.008c-.166 0-.435.062-.663.311s-.871.851-.871 2.075.892 2.407 1.016 2.573c.124.166 1.756 2.681 4.254 3.76.594.257 1.058.411 1.42.526.597.19 1.14.163 1.569.099.479-.071 1.472-.602 1.68-1.183.207-.581.207-1.079.145-1.183-.062-.104-.228-.166-.477-.291z"/>
+              </svg>
               Chat on WhatsApp
             </a>
           </div>
 
         </div>
 
-        <!-- RIGHT: Enquiry Form card -->
-        <div class="reveal-right" style="background: #E2E1D5; border: 1px solid #442F23; padding: 32px; border-radius: 8px; box-shadow: 0 10px 28px -16px rgba(68,47,35,0.35); display: flex; flex-direction: column; justify-content: center;">
-          <h3 style="margin: 0 0 8px 0; font-family:'Georgia',serif; font-size: 1.4rem; color: #442F23; font-weight: 700;">Send an Enquiry</h3>
-          <p style="font-size: .9rem; color: rgba(68,47,35,0.7); margin: 0 0 24px 0; line-height: 1.4;">Tell us about your property and requirements. We'll get back within one business day.</p>
+        <!-- RIGHT COLUMN -->
+        <div class="enquiry-card reveal-right">
+          <h3>Send an Enquiry</h3>
 
-          <form class="contact-form" id="enquiryForm" style="display: flex; flex-direction: column; gap: 14px;">
-            <input type="text" name="propertyName" placeholder="Property name" required style="width: 100%; padding: 12px 16px; border: 1px solid rgba(186,141,95,0.4); border-radius: 4px; background: #E2E1D5; font-family:'Georgia',serif; font-size: 0.95rem; color: #442F23;">
-            <input type="text" name="contactName" placeholder="Your name" required style="width: 100%; padding: 12px 16px; border: 1px solid rgba(186,141,95,0.4); border-radius: 4px; background: #E2E1D5; font-family:'Georgia',serif; font-size: 0.95rem; color: #442F23;">
-            <input type="tel" name="phone" placeholder="Phone number" required style="width: 100%; padding: 12px 16px; border: 1px solid rgba(186,141,95,0.4); border-radius: 4px; background: #E2E1D5; font-family:'Georgia',serif; font-size: 0.95rem; color: #442F23;">
-            <input type="email" name="email" placeholder="Work email" required style="width: 100%; padding: 12px 16px; border: 1px solid rgba(186,141,95,0.4); border-radius: 4px; background: #E2E1D5; font-family:'Georgia',serif; font-size: 0.95rem; color: #442F23;">
-            <textarea name="message" rows="3" placeholder="What linen products are you looking to source?" style="width: 100%; padding: 12px 16px; border: 1px solid rgba(186,141,95,0.4); border-radius: 4px; background: #E2E1D5; font-family:'Georgia',serif; font-size: 0.95rem; color: #442F23; resize: none;"></textarea>
-            <button type="submit" class="btn btn-primary" style="background: #BA8D5F; color: #E2E1D5; border: none; padding: 14px; font-family:'Georgia',serif; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; border-radius: 4px; cursor: pointer; margin-top: 6px;">Send Enquiry</button>
+          <form class="contact-form-v2" id="enquiryForm">
+            <div class="field-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <input type="text" name="contactName" placeholder="Your Name" required>
+            </div>
+            <div class="field-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.9 2Z"/></svg>
+              <input type="tel" name="phone" placeholder="Phone Number" required>
+            </div>
+            <div class="field-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+              <input type="email" name="email" placeholder="Work Email" required>
+            </div>
+            <div class="field-icon field-icon-textarea">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <textarea name="message" rows="4" placeholder="How can we help you?"></textarea>
+            </div>
+            <button type="submit" class="btn-send-enquiry">Send Enquiry</button>
+            <p class="privacy-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              We respect your privacy. Your information will be kept confidential.
+            </p>
             <div class="form-status" role="status"></div>
           </form>
         </div>
 
       </div>
-
     </div>
   </section>
 
   <!-- LIVE MAP -->
   <section class="section map-section">
     <div class="wrap">
-      <div class="map-shell reveal">
+      <div class="map-shell-v2 reveal">
         <iframe class="map-frame" title="STC Living head office location" allowfullscreen loading="lazy"></iframe>
-        <div class="map-overlay">
-          <h4>STC Living</h4>
-          <p>Door No. 2-168, NH-16 Service Road, Opp. Murugan Hotel, Kaza Village, Mangalagiri Mandal, Guntur District, AP – 522503</p>
-          <button class="btn btn-primary" data-directions>Get Directions</button>
+        <div class="map-overlay-v2">
+          <div class="map-pin-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <b>STC Living</b>
+              <p>Door No. 2-168, NH-16 Service Road, Opp. Murugan Hotel, Kaza Village, Mangalagiri Mandal, Guntur District, Andhra Pradesh – 522503</p>
+            </div>
+          </div>
+          <button class="get-directions-btn-v2" data-directions>
+            Get Directions
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -346,8 +461,12 @@
 <footer>
   <div class="wrap">
     <div class="footer-grid">
+      <!-- 1. BRAND COLUMN WITH LOGO -->
       <div class="footer-brand">
-        <span class="brand-name">STC <b>LIVING</b></span>
+        <a href="index.html" class="footer-logo-wrap">
+          <img src="assets/logo/stc_living_mark.png" alt="STC Living Logo" class="footer-logo">
+          <span class="brand-name">STC <b>LIVING</b></span>
+        </a>
         <p>Designed for Hospitality. Crafted for Comfort. Premium bed &amp; bath linen for hotels and resorts across India.</p>
         <div class="footer-social mt-3">
           <a href="#" data-whatsapp aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
@@ -355,20 +474,26 @@
           <a href="tel:+919100098038" aria-label="Phone"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.9 2Z"/></svg></a>
         </div>
       </div>
+
+      <!-- 2. QUICK LINKS -->
       <div class="footer-col">
         <h4>Quick Links</h4>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#collection">Collection</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="collections.html">Collection</a>
+        <a href="contact.html">Contact</a>
       </div>
+
+      <!-- 3. COLLECTION -->
       <div class="footer-col">
         <h4>Collection</h4>
-        <a href="#collection">Bed Linen</a>
-        <a href="#collection">Bath Linen</a>
-        <a href="#tiers">STC Fine Linen</a>
-        <a href="#tiers">STC Luxe Linen</a>
+        <a href="collections.html">Bed Linen</a>
+        <a href="collections.html">Bath Linen</a>
+        <a href="collections.html">STC Fine Linen</a>
+        <a href="collections.html">STC Luxe Linen</a>
       </div>
+
+      <!-- 4. CONTACT -->
       <div class="footer-col">
         <h4>Contact</h4>
         <a href="tel:+919100098038">+91 91000 98038</a>
@@ -376,6 +501,8 @@
         <span>Door No. 2-168, NH-16 Service Road, Kaza Village, Mangalagiri Mandal, Guntur District, AP – 522503</span>
       </div>
     </div>
+
+    <!-- FOOTER BOTTOM -->
     <div class="footer-bottom">
       <p>© <span data-year>2026</span> STC Living. All Rights Reserved.</p>
       <p>Designed for Hospitality. Crafted for Comfort.</p>
@@ -383,8 +510,12 @@
   </div>
 </footer>
 
+
+<!-- Floating WhatsApp Action Button -->
 <a href="#" class="wa-float" data-whatsapp="Hello STC Living, I'd like to enquire about your linen collection." aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.763.459 3.483 1.332 5.002L2 22l5.127-1.339a9.932 9.932 0 0 0 4.882 1.282h.003c5.505 0 9.988-4.478 9.989-9.984 0-2.666-1.037-5.172-2.923-7.058A9.919 9.919 0 0 0 12.012 2zm0 18.312h-.002a8.272 8.272 0 0 1-4.218-1.162l-.302-.178-3.132.818.835-3.045-.198-.313a8.274 8.274 0 0 1-1.272-4.448c.001-4.57 3.719-8.288 8.291-8.288 2.214 0 4.296.863 5.86 2.428a8.243 8.243 0 0 1 2.425 5.862c-.001 4.571-3.719 8.289-8.286 8.289zm4.542-6.208c-.249-.125-1.472-.726-1.701-.809-.228-.083-.394-.125-.56.125-.166.249-.643.809-.788.975-.145.166-.29.187-.539.062a6.792 6.792 0 0 1-2.001-1.233 7.488 7.488 0 0 1-1.385-1.724c-.145-.249-.015-.384.109-.508.112-.112.249-.29.373-.435.124-.145.166-.249.249-.415.083-.166.042-.311-.021-.435-.062-.125-.56-1.349-.767-1.847-.202-.486-.408-.42-.56-.428l-.477-.008c-.166 0-.435.062-.663.311s-.871.851-.871 2.075.892 2.407 1.016 2.573c.124.166 1.756 2.681 4.254 3.76.594.257 1.058.411 1.42.526.597.19 1.14.163 1.569.099.479-.071 1.472-.602 1.68-1.183.207-.581.207-1.079.145-1.183-.062-.104-.228-.166-.477-.291z"/>
+  </svg>
 </a>
 
 <script src="js/script.js"></script>

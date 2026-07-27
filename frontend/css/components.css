@@ -1,31 +1,8 @@
-
 /* =========================================================
    Page component styles — homepage & inner pages
    ========================================================= */
 
 /* ---------- HOME HERO ---------- */
-.hero{background:var(--cream);padding:0;}
-.hero-banner{position:relative;width:100%;height:640px;overflow:hidden;}
-.hero-banner img{width:100%;height:100%;object-fit:cover;display:block;}
-.hero-banner::before{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,
-    var(--cream) 0%,
-    rgba(226,225,213,.92) 32%,
-    rgba(226,225,213,.55) 52%,
-    rgba(226,225,213,0) 72%);
-}
-.hero-banner-content{
-  position:absolute;top:50%;left:0;transform:translateY(-50%);
-  max-width:560px;padding:0 64px;z-index:2;
-}
-.hero-banner-content h1{font-size:3.2rem;line-height:1.14;}
-.hero-banner-content h1 em{font-style:italic;color:var(--gold);}
-.hero-banner-content .stitch{justify-content:flex-start;margin:22px 0;width:60px;}
-.hero-banner-content .stitch::before{width:60px;}
-.hero-banner-content .stitch::after{display:none;}
-.hero-banner-content p.lede{margin-top:6px;max-width:420px;font-size:1.02rem;opacity:.88;}
-.hero-banner-content .hero-actions{display:flex;gap:18px;margin-top:34px;flex-wrap:wrap;}
 .hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:32px;border-top:1px solid var(--hair);}
 .hero-stats div b{display:block;font-family:'Georgia',serif;font-size:2rem;color:var(--espresso);}
 .hero-stats div span{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;opacity:.7;}
@@ -130,61 +107,372 @@
 .quote-mark{font-family:'Georgia',serif;font-size:5rem;color:var(--gold);line-height:.4;opacity:.5;}
 .quote-block p{font-family:'Georgia',serif;font-size:1.9rem;color:var(--espresso);max-width:680px;margin:24px auto 0;line-height:1.4;}
 
-/* ---------- CONTACT ---------- */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
-.contact-cards{display:flex;flex-direction:column;gap:18px;}
-.contact-card{
-  background:var(--card);border:1px solid var(--hair);border-radius:var(--radius-md);padding:22px 26px;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
-  transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+/* ---------- CONTACT GRID ---------- */
+.contact-grid-v2{
+  display:grid;
+  grid-template-columns:380px 1fr;
+  gap:24px;
+  align-items:stretch;
+  margin-bottom:0 !important; /* REMOVED GAP BELOW BOXES */
+  padding-bottom:0 !important;
 }
-.contact-card:hover{transform:translateX(6px);box-shadow:var(--shadow-card);}
-.contact-card .name{font-family:'Georgia',serif;font-size:1.25rem;}
-.contact-card .role{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-top:2px;}
-.contact-card .links{display:flex;gap:14px;}
-.contact-card .links a{
-  width:36px;height:36px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;
-  transition:background .3s,transform .3s;
+.contact-left{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  justify-content:space-between;
 }
-.contact-card .links a:hover{background:var(--gold);transform:scale(1.1);}
-.contact-card .links svg{width:15px;height:15px;stroke:var(--gold);}
-.contact-card .links a:hover svg{stroke:var(--espresso-deep);}
 
-.contact-info{background:var(--espresso-deep);color:var(--text-cream);border-radius:var(--radius-lg);padding:34px;}
-.contact-info h3{color:var(--text-cream);font-size:1.3rem;margin-bottom:18px;}
-.contact-info .row{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid rgba(186,141,95,.16);font-size:.9rem;}
-.contact-info .row:last-child{border-bottom:none;}
-.contact-info .row b{min-width:74px;color:var(--gold-light);font-weight:400;letter-spacing:.06em;text-transform:uppercase;font-size:.72rem;}
+/* 1. Get in Touch Card */
+.git-card{
+  background:#FFFFFF;
+  border:1px solid rgba(0,0,0,0.06);
+  border-radius:12px;
+  padding:32px 28px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.03);
+  flex:1;
+}
+.git-card h3{
+  font-family:'Georgia',serif;
+  font-size:1.4rem;
+  color:#3C2A21;
+  margin-bottom:28px;
+  font-weight:700;
+}
+.git-row{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  margin-bottom:22px;
+}
+.git-row:last-child{margin-bottom:0;}
+.git-ic{
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  border-radius:50%;
+  border:1px solid #C3935B;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+}
+.git-ic svg{
+  width:18px;
+  height:18px;
+  stroke:#C3935B;
+  fill:none;
+}
+.git-row b{
+  display:block;
+  font-family:'Georgia',serif;
+  font-size:.95rem;
+  color:#3C2A21;
+  margin-bottom:3px;
+  font-weight:700;
+}
+.git-row p{
+  font-size:.88rem;
+  color:#555555;
+  line-height:1.45;
+  margin:0;
+}
 
-.contact-form{margin-top:24px;display:flex;flex-direction:column;gap:14px;}
-.contact-form input,.contact-form textarea,.contact-form select{
-  background:var(--card);border:1px solid var(--hair);border-radius:var(--radius-sm);
-  padding:14px 16px;font-size:.92rem;color:var(--text-brown);transition:border-color .3s,box-shadow .3s;
+/* 2. WhatsApp Card */
+.wa-card-v2{
+  background:#3C281E;
+  border-radius:14px;
+  padding:26px 24px;
+  color:#FFFFFF;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
-.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{
-  outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(186,141,95,.15);
+.wa-top{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  margin-bottom:22px;
 }
-.contact-form button{align-self:flex-start;border:none;cursor:pointer;}
-.form-status{font-size:.84rem;margin-top:6px;min-height:18px;}
-.form-status.ok{color:var(--espresso);font-weight:600;}
-.form-status.err{color:var(--gold);font-weight:600;}
+.wa-ic{
+  width:52px;
+  height:52px;
+  flex:0 0 52px;
+  border-radius:50%;
+  border:1.5px solid #C3935B;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+}
+.wa-ic svg{
+  width:24px;
+  height:24px;
+  stroke:#C3935B;
+  fill:none;
+}
+.wa-top h4{
+  font-family:'Georgia',serif;
+  color:#FFFFFF;
+  font-size:1.15rem;
+  margin:0 0 6px 0;
+  font-weight:700;
+}
+.wa-top p{
+  color:rgba(255,255,255,0.8);
+  font-size:.88rem;
+  line-height:1.4;
+  margin:0;
+}
 
-/* ---------- MAP ---------- */
-/* ---------- MAP ---------- */
-.map-section{padding-bottom:60px;}
-.map-shell{
-  max-width:760px;margin:0 auto;
-  border-radius:var(--radius-md);overflow:hidden;box-shadow:0 16px 40px -20px rgba(68,47,35,0.4);border:1px solid var(--gold);
-  position:relative;background:var(--card);
+/* WhatsApp Green Button */
+.wa-btn-v2{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  background:#268A36;
+  color:#FFFFFF !important;
+  padding:14px;
+  border-radius:8px;
+  font-family:'Georgia',serif;
+  font-size:.82rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  transition:background .25s var(--ease), transform .25s var(--ease);
+  text-decoration:none;
+  border:none;
 }
-.map-frame{width:100%;height:300px;border:0;display:block;filter:grayscale(.15) sepia(.12) saturate(1.05);}
-.map-overlay{
-  position:absolute;left:18px;top:18px;background:var(--card);padding:16px 20px;border-radius:var(--radius-sm);
-  box-shadow:var(--shadow-card);max-width:240px;
+.wa-btn-v2 svg{
+  width:20px;
+  height:20px;
+  stroke:#FFFFFF;
+  fill:none;
+  flex:0 0 20px;
 }
-.map-overlay h4{font-size:1rem;margin-bottom:5px;}
-.map-overlay p{font-size:.78rem;opacity:.8;margin-bottom:12px;}
-.map-overlay .btn{width:100%;padding:10px 16px;font-size:.68rem;}
+.wa-btn-v2:hover{
+  background:#20782e;
+  transform:translateY(-1px);
+}
+
+/* 3. Send an Enquiry Form Card */
+.enquiry-card{
+  background:#FFFFFF;
+  border:1px solid rgba(0,0,0,0.06);
+  border-radius:12px;
+  padding:36px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.03);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.enquiry-card h3{
+  font-family:'Georgia',serif;
+  font-size:1.45rem;
+  color:#3C2A21;
+  margin-bottom:28px;
+  font-weight:700;
+}
+.contact-form-v2{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.field-icon{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+.field-icon svg{
+  position:absolute;
+  left:16px;
+  width:18px;
+  height:18px;
+  stroke:#999999;
+  fill:none;
+  pointer-events:none;
+}
+.field-icon input,
+.field-icon textarea{
+  width:100%;
+  padding:14px 16px 14px 48px;
+  border:1px solid #E2E0D9;
+  border-radius:6px;
+  background:#FAF9F6;
+  font-family:'Georgia',serif;
+  font-size:.92rem;
+  color:#3C2A21;
+  transition:border-color .3s, background .3s, box-shadow .3s;
+}
+.field-icon input::placeholder,
+.field-icon textarea::placeholder{
+  color:#888888;
+  font-family:'Georgia',serif;
+}
+.field-icon input:focus,
+.field-icon textarea:focus{
+  outline:none;
+  border-color:#C3935B;
+  background:#FFFFFF;
+  box-shadow:0 0 0 3px rgba(195,147,91,.15);
+}
+.field-icon-textarea{
+  align-items:flex-start;
+}
+.field-icon-textarea svg{
+  top:16px;
+}
+.field-icon-textarea textarea{
+  resize:vertical;
+  min-height:130px;
+}
+
+/* Gold Send Button */
+.btn-send-enquiry{
+  background:#C3935B;
+  color:#FFFFFF;
+  border:none;
+  padding:16px;
+  border-radius:6px;
+  font-family:'Georgia',serif;
+  font-weight:700;
+  text-transform:uppercase;
+  font-size:.88rem;
+  letter-spacing:.1em;
+  cursor:pointer;
+  margin-top:6px;
+  transition:background .3s, transform .3s;
+  width:100%;
+}
+.btn-send-enquiry:hover{
+  background:#B3834B;
+  transform:translateY(-1px);
+}
+
+.privacy-note{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  text-align:center;
+  font-size:.82rem;
+  color:#777777;
+  margin-top:14px;
+}
+.privacy-note svg{
+  width:14px;
+  height:14px;
+  flex:0 0 14px;
+  stroke:#777777;
+  fill:none;
+}
+.form-status{
+  font-size:.84rem;
+  margin-top:6px;
+  min-height:18px;
+  text-align:center;
+}
+.form-status.ok{color:#3C2A21;font-weight:600;}
+.form-status.err{color:#C3935B;font-weight:600;}
+
+/* ---------- MAP VIEW (POSITIONED DIRECTLY BELOW BOXES) ---------- */
+.map-section{
+  padding-top:0 !important; /* REMOVED TOP SPACE TO FLUSH MAP WITH BOXES */
+  padding-bottom:60px;
+  width:100%;
+  margin-top:0 !important;
+}
+.map-shell-v2{
+  position:relative;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,0.08);
+  box-shadow:0 8px 24px rgba(0,0,0,0.04);
+  height:380px;
+  width:100%;
+}
+.map-shell-v2 .map-frame{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+
+/* Overlay Card Inside Map */
+.map-overlay-v2{
+  position:absolute;
+  left:24px;
+  top:24px;
+  width:300px;
+  background:#FAF9F6;
+  border-radius:8px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.12);
+  padding:24px;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.map-pin-row{
+  display:flex;
+  gap:12px;
+  margin-bottom:16px;
+}
+.map-pin-row svg{
+  width:20px;
+  height:20px;
+  flex:0 0 20px;
+  stroke:#3C2A21;
+  fill:none;
+  margin-top:2px;
+}
+.map-pin-row b{
+  display:block;
+  font-family:'Georgia',serif;
+  font-size:1.05rem;
+  color:#3C2A21;
+  margin-bottom:6px;
+  font-weight:700;
+}
+.map-pin-row p{
+  font-size:.82rem;
+  color:#555555;
+  line-height:1.45;
+  margin:0;
+}
+
+.get-directions-btn-v2{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:100%;
+  background:#3C281E;
+  color:#FFFFFF;
+  border:none;
+  padding:12px;
+  border-radius:4px;
+  font-family:'Georgia',serif;
+  font-size:.76rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  cursor:pointer;
+  transition:background .3s, transform .3s;
+}
+.get-directions-btn-v2 svg{
+  width:14px;
+  height:14px;
+  stroke:#FFFFFF;
+  fill:none;
+}
+.get-directions-btn-v2:hover{
+  background:#2A1B14;
+  transform:translateY(-1px);
+}
 
 /* ---------- CTA BANNER ---------- */
 .cta-banner{

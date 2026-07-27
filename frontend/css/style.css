@@ -181,3 +181,340 @@ footer{background:var(--espresso-deep);color:var(--text-cream);padding:72px 0 28
 
 /* utility */
 .mt-1{margin-top:8px;} .mt-2{margin-top:16px;} .mt-3{margin-top:24px;} .mt-4{margin-top:40px;}
+
+
+/* WhatsApp Card Header Icon Container */
+.wa-ic {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: 50%;
+  border: 1px solid #C3935B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+/* Force clean SVG rendering inside the Header Icon */
+.wa-ic svg {
+  width: 24px !important;
+  height: 24px !important;
+  stroke: none !important;
+  fill: #C3935B !important;
+  display: block;
+}
+
+/* WhatsApp Green Button Container */
+.wa-btn-v2 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  width: 100%;
+  background: #268A36;
+  color: #FFFFFF !important;
+  padding: 14px;
+  border-radius: 8px;
+  font-family: 'Georgia', serif;
+  font-size: .82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  transition: background .25s var(--ease), transform .25s var(--ease);
+  text-decoration: none;
+  border: none;
+}
+
+/* Force clean SVG rendering inside the Green Button */
+.wa-btn-v2 svg {
+  width: 20px !important;
+  height: 20px !important;
+  stroke: none !important;
+  fill: #FFFFFF !important;
+  flex: 0 0 20px !important;
+  display: block;
+}
+
+.wa-btn-v2:hover {
+  background: #20782e;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CONTACT GRID & LAYOUT RESTORATION FIX
+   ========================================================= */
+
+/* 1. Main Grid: Forces 2 Columns Side-by-Side */
+.contact-grid-v2 {
+  display: grid !important;
+  grid-template-columns: 380px 1fr !important; /* Left column fixed, Right column fills space */
+  gap: 24px !important;
+  align-items: stretch !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 2. Left Column Stack: Holds "Get in Touch" + "WhatsApp Card" vertically */
+.contact-left {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  justify-content: space-between !important;
+}
+
+/* 3. WhatsApp Card Box Internal Alignment */
+.wa-card-v2 {
+  background: #3C281E;
+  border-radius: 14px;
+  padding: 26px 24px;
+  color: #FFFFFF;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.wa-top {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 18px !important;
+  margin-bottom: 22px !important;
+}
+
+/* 4. WhatsApp Button Alignment */
+.wa-btn-v2 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  width: 100% !important;
+  background: #268A36;
+  color: #FFFFFF !important;
+  padding: 14px;
+  border-radius: 8px;
+  font-family: 'Georgia', serif;
+  font-size: .82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box !important;
+}
+
+.wa-btn-v2 svg {
+  width: 20px !important;
+  height: 20px !important;
+  stroke: none !important;
+  fill: #FFFFFF !important;
+  flex: 0 0 20px !important;
+  display: block !important;
+}
+
+/* Responsive adjustment for small screen / mobile view */
+@media (max-width: 992px) {
+  .contact-grid-v2 {
+    grid-template-columns: 1fr !important; /* Stacks gracefully on mobile devices */
+  }
+}
+
+/* =========================================================
+   GAP REDUCTION FIX: Removes big gap between contact and map
+   ========================================================= */
+#contact.section {
+  padding-bottom: 30px !important; /* Removes 100px bottom padding from contact section */
+}
+
+.map-section {
+  padding-top: 16px !important; /* Creates a clean, subtle 16px gap above the map */
+}
+
+
+/* =========================================================
+   WHY STC LIVING: Smooth Icon Hover Swap
+   ========================================================= */
+
+/* Container positioning */
+.why-card .ic {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Common image styles */
+.why-card .ic img {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Default state: Light Brown icon visible */
+.why-card .ic .ic-default {
+  opacity: 1;
+}
+
+/* Hover state: Hide default icon */
+.why-card:hover .ic .ic-default {
+  opacity: 0;
+}
+
+/* Hover icon setup: Absolutely positioned over default icon */
+.why-card .ic .ic-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+/* Hover state: Show hover icon */
+.why-card:hover .ic .ic-hover {
+  opacity: 1;
+}
+
+/* Force Georgia font to render straight/flat numbers */
+.about-stats b,
+.stat-num {
+  font-variant-numeric: lining-nums !important;
+  font-feature-settings: "lnum" 1 !important;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--espresso);
+  line-height: 1;
+}
+
+/* =========================================================
+   FIX: Force Straight Numbers in Contact Section
+   ========================================================= */
+
+#contact,
+.contact-grid-v2,
+.contact-left,
+.contact-info,
+.contact-card {
+  font-variant-numeric: lining-nums !important;
+  font-feature-settings: "lnum" 1 !important;
+}
+
+/* Fallback for links or direct phone/address text elements */
+#contact a,
+#contact p,
+#contact address {
+  font-variant-numeric: lining-nums !important;
+  font-feature-settings: "lnum" 1 !important;
+}
+
+/* =========================================================
+   FIX: Force Straight Numbers in Footer
+   ========================================================= */
+
+footer,
+.footer-grid,
+.footer-col,
+.footer-bottom {
+  font-variant-numeric: lining-nums !important;
+  font-feature-settings: "lnum" 1 !important;
+}
+
+/* Ensures all footer links and text inherit the lining figures */
+footer a,
+footer p,
+footer span {
+  font-variant-numeric: lining-nums !important;
+  font-feature-settings: "lnum" 1 !important;
+}
+
+/* =========================================================
+   FIX: Force Straight Numbers in Map Section & Popup Cards
+   ========================================================= */
+
+.map-section,
+#map,
+.leaflet-popup-content,
+.gm-style,
+.map-info-box {
+  font-variant-numeric: lining-nums !important;
+  font-feature-settings: "lnum" 1 !important;
+}
+
+.map-section *,
+.map-info-box * {
+  font-variant-numeric: lining-nums !important;
+  font-feature-settings: "lnum" 1 !important;
+}
+
+/* =========================================================
+   ENLARGED FOOTER LOGO (Standalone)
+   ========================================================= */
+
+.footer-grid {
+  align-items: start;
+}
+
+.footer-logo-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.footer-logo {
+  height: 120px; /* Increased size for strong visual impact */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.footer-brand p {
+  margin-top: 0;
+  opacity: 0.75;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+
+/* =========================================================
+   FORCE LIFT FOOTER LOGO UP
+   ========================================================= */
+
+/* 1. Ensure the grid container aligns all columns to the absolute top */
+.footer-grid {
+  align-items: start !important;
+}
+
+/* 2. Directly shift the logo up */
+.footer-logo-link,
+.footer-brand .footer-logo {
+  transform: translateY(-35px) !important; /* Adjust number to move up/down */
+  display: block !important;
+  margin-bottom: -15px !important; /* Offsets space left behind by transform */
+}
+
+/* =========================================================
+   LIFT UP FOOTER BRAND CONTENT (Text & Social Icons)
+   ========================================================= */
+
+/* Pulls all text and content inside footer-brand upward */
+.footer-brand .brand-name,
+.footer-brand p,
+.footer-brand .footer-social {
+  transform: translateY(-35px) !important; /* Move higher/lower by changing this value */
+}
+
+/* Reduces top spacing specifically above the STC LIVING heading */
+.footer-brand .brand-name {
+  margin-top: 0 !important;
+  display: inline-block;
+}
+
+/* Reduces gap above the paragraph */
+.footer-brand p {
+  margin-top: 8px !important;
+  margin-bottom: 12px !important;
+}
+
+/* Tightens distance above social icons */
+.footer-brand .footer-social {
+  margin-top: 12px !important;
+}
