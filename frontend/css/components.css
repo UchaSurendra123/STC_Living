@@ -72,7 +72,7 @@
 .coll-thumb{aspect-ratio:1/1;overflow:hidden;background:var(--cream);}
 .coll-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
 .coll-card:hover .coll-thumb img{transform:scale(1.14);}
-.coll-label{padding:16px 18px;font-size:.92rem;letter-spacing:.02em;display:flex;justify-content:space-between;align-items:center;}
+.coll-label{padding:16px 18px;font-size:.92rem;letter-spacing:.02em;display:flex;justify-content:center;align-items:center;}
 .coll-label svg{width:14px;height:14px;stroke:var(--gold);opacity:0;transform:translateX(-6px);transition:all .3s var(--ease);}
 .coll-card:hover .coll-label svg{opacity:1;transform:translateX(0);}
 .coll-group-title{font-size:1.7rem;margin:56px 0 26px;text-align:center;}

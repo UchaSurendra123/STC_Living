@@ -459,7 +459,7 @@ footer span {
 }
 
 .footer-logo {
-  height: 120px; /* Increased size for strong visual impact */
+  height: 170px; /* Increased size for strong visual impact */
   width: auto;
   display: block;
   object-fit: contain;
@@ -486,9 +486,10 @@ footer span {
 /* 2. Directly shift the logo up */
 .footer-logo-link,
 .footer-brand .footer-logo {
-  transform: translateY(-35px) !important; /* Adjust number to move up/down */
+  transform: translateY(-72px) !important; /* Adjust number to move up/down */
   display: block !important;
   margin-bottom: -15px !important; /* Offsets space left behind by transform */
+  margin-left: -30px !important; /* Pulls logo further to the left */
 }
 
 /* =========================================================
@@ -499,7 +500,7 @@ footer span {
 .footer-brand .brand-name,
 .footer-brand p,
 .footer-brand .footer-social {
-  transform: translateY(-35px) !important; /* Move higher/lower by changing this value */
+  transform: translateY(-90px) !important; /* Move higher/lower by changing this value */
 }
 
 /* Reduces top spacing specifically above the STC LIVING heading */
@@ -517,4 +518,206 @@ footer span {
 /* Tightens distance above social icons */
 .footer-brand .footer-social {
   margin-top: 12px !important;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE FIXES (Does not affect desktop view)
+   ========================================================= */
+
+@media (max-width: 768px) {
+  
+  /* 1. FIX: Why STC Living Grid (1 Column or 2 Column Stack) */
+  .why-grid,
+  .why .why-grid {
+    grid-template-columns: 1fr !important; /* Stack cleanly in a single responsive column */
+    gap: 20px !important;
+    padding: 0 16px !important;
+  }
+
+  .why-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. FIX: About Stats Left Alignment & Padding */
+  .about-stats {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important; /* Forces uniform left alignment */
+    justify-content: flex-start !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    gap: 24px !important;
+  }
+
+  .about-stats > div {
+    width: 100% !important;
+    text-align: left !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .about-stats .stat-num,
+  .about-stats b {
+    display: block !important;
+    text-align: left !important;
+  }
+
+  .about-stats span {
+    display: block !important;
+    text-align: left !important;
+  }
+}
+
+
+/* =========================================================
+   COMPLETE MOBILE RESPONSIVE SUITE (Screen width <= 768px)
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /* 1. CONTAINER & WRAPPER PADDING */
+  .wrap, 
+  .container, 
+  section {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. WHY STC LIVING GRID (Fixes clipped cards -> 1 clean column) */
+  .why-grid,
+  .why .why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 0 !important;
+  }
+
+  .why-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 3. ABOUT STATS ALIGNMENT (Fixes 30+ left shift & aligns all numbers) */
+  .about-stats {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    gap: 20px !important;
+  }
+
+  .about-stats > div,
+  .about-stats .stat-item {
+    width: 100% !important;
+    text-align: left !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .about-stats .stat-num,
+  .about-stats b,
+  .about-stats span {
+    display: block !important;
+    text-align: left !important;
+    font-variant-numeric: lining-nums !important;
+  }
+
+  /* 4. MAP SECTION & POPUP VIEW */
+  .map-section, 
+  #map, 
+  .map-info-box {
+    width: 100% !important;
+    font-variant-numeric: lining-nums !important;
+  }
+
+  .map-info-box {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    margin-top: 16px !important;
+  }
+
+  /* 5. FOOTER LAYOUT (Stacks cleanly on mobile) */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    align-items: flex-start !important;
+  }
+
+  .footer-brand {
+    text-align: left !important;
+  }
+
+  .footer-logo {
+    height: 75px !important; /* Slightly scaled for balanced mobile proportion */
+    width: auto !important;
+  }
+
+  .footer-logo-link {
+    transform: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .footer-brand .brand-name,
+  .footer-brand p,
+  .footer-brand .footer-social {
+    transform: none !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 10px !important;
+    text-align: center !important;
+  }
+}
+
+
+
+
+
+/* =========================================================
+   PERFECT ALIGNMENT FOR ABOUT STATS (30+, 100%, Up to 600TC)
+   ========================================================= */
+
+@media (max-width: 768px) {
+  /* Parent Container: Force uniform left-alignment for all children */
+  .about-stats {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Target every stat item inside (including the first '30+' item) */
+  .about-stats > div,
+  .about-stats .stat-item,
+  .about-stats > div:first-child {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    text-align: left !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Force the stat number typography to start at the absolute left edge */
+  .about-stats .stat-num,
+  .about-stats h3,
+  .about-stats b,
+  .about-stats span {
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    display: block !important;
+  }
 }
