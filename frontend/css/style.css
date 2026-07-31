@@ -454,12 +454,20 @@ footer span {
 
 .footer-logo-link {
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.footer-logo-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-bottom: 8px !important;
   text-decoration: none;
 }
 
 .footer-logo {
-  height: 170px; /* Increased size for strong visual impact */
+  height: 90px; /* Increased size for strong visual impact */
   width: auto;
   display: block;
   object-fit: contain;
@@ -473,52 +481,6 @@ footer span {
   max-width: 280px;
 }
 
-
-/* =========================================================
-   FORCE LIFT FOOTER LOGO UP
-   ========================================================= */
-
-/* 1. Ensure the grid container aligns all columns to the absolute top */
-.footer-grid {
-  align-items: start !important;
-}
-
-/* 2. Directly shift the logo up */
-.footer-logo-link,
-.footer-brand .footer-logo {
-  transform: translateY(-72px) !important; /* Adjust number to move up/down */
-  display: block !important;
-  margin-bottom: -15px !important; /* Offsets space left behind by transform */
-  margin-left: -30px !important; /* Pulls logo further to the left */
-}
-
-/* =========================================================
-   LIFT UP FOOTER BRAND CONTENT (Text & Social Icons)
-   ========================================================= */
-
-/* Pulls all text and content inside footer-brand upward */
-.footer-brand .brand-name,
-.footer-brand p,
-.footer-brand .footer-social {
-  transform: translateY(-90px) !important; /* Move higher/lower by changing this value */
-}
-
-/* Reduces top spacing specifically above the STC LIVING heading */
-.footer-brand .brand-name {
-  margin-top: 0 !important;
-  display: inline-block;
-}
-
-/* Reduces gap above the paragraph */
-.footer-brand p {
-  margin-top: 8px !important;
-  margin-bottom: 12px !important;
-}
-
-/* Tightens distance above social icons */
-.footer-brand .footer-social {
-  margin-top: 12px !important;
-}
 
 
 /* =========================================================
@@ -655,11 +617,7 @@ footer span {
     text-align: left !important;
   }
 
-  .footer-logo {
-    height: 75px !important; /* Slightly scaled for balanced mobile proportion */
-    width: auto !important;
-  }
-
+ 
   .footer-logo-link {
     transform: none !important;
     margin-top: 0 !important;
@@ -735,38 +693,63 @@ footer span {
   margin-top: 8px;
 }
 
-/* Target only mobile view to boost logo size */
 @media (max-width: 768px) {
+  .footer-logo-wrap {
+    display: block !important;
+    height: auto !important;      /* remove the fixed crop height */
+    overflow: visible !important; /* stop clipping the mark */
+    margin: 0 0 10px 0 !important;
+  }
   .footer-brand .footer-logo,
   .footer-logo {
-    height: 65px !important;      /* Increased from small size to bold mobile size */
+    height: 48px !important;      /* real visible size, no cropping */
     width: auto !important;
-    max-width: 220px !important;  /* Prevents clipping */
+    max-width: 200px !important;
     display: block !important;
-    margin-left: 0 !important;   /* Keeps it aligned to left edge */
+    transform: none !important;
+    margin: 0 !important;
   }
-  
-  .footer-logo-link {
-    transform: none !important;  /* Resets any desktop offsets on mobile */
-    margin-bottom: 16px !important;
+  .footer-brand p {
+    margin: 0 0 16px 0 !important;
   }
 }
 
-/* Match address styling to the contact links above it */
-.footer-col span {
-  font-size: 0.95rem !important;  /* Matches standard link font size */
-  font-weight: 400 !important;   /* Removes the extra bold weight */
-  line-height: 1.6 !important;
-  opacity: 0.85 !important;      /* Blends naturally with other footer items */
+.footer-logo-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.footer-logo {
+  height: 60px;
+  width: auto;
   display: block;
-  margin-top: 6px;
+  object-fit: contain;
 }
 
-/* Match footer address font size & line-height exactly to links above */
-.footer-col span {
-  font-size: 0.88rem !important;  /* Matches standard link font size exactly */
-  font-weight: 400 !important;   /* Regular weight */
-  line-height: 1.5 !important;
-  display: block !important;
-  margin-top: 8px !important;
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;   /* try 4–8px */
+}
+
+
+.footer-brand p{
+  margin-top:6px;
+  opacity:.7;
+  font-size:.92rem;
+  max-width:260px;
+}
+
+.footer-logo-link{
+  display:inline-block;
+  margin-bottom:8px;
+  text-decoration:none;
+}
+
+.footer-logo{
+  height:60px;
+  width:auto;
+  display:block;
+  object-fit:contain;
 }
