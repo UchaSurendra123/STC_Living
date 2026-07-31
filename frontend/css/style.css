@@ -721,3 +721,52 @@ footer span {
     display: block !important;
   }
 }
+
+/* =========================================================
+   FOOTER ADDRESS STYLING MATCH
+   ========================================================= */
+
+.footer-col span {
+  font-size: 0.95rem !important;  /* Matches the links size exactly */
+  font-weight: 400 !important;      /* Removes the heavy bold look */
+  line-height: 1.6 !important;
+  opacity: 0.85 !important;         /* Matches standard link opacity */
+  display: block !important;
+  margin-top: 8px;
+}
+
+/* Target only mobile view to boost logo size */
+@media (max-width: 768px) {
+  .footer-brand .footer-logo,
+  .footer-logo {
+    height: 65px !important;      /* Increased from small size to bold mobile size */
+    width: auto !important;
+    max-width: 220px !important;  /* Prevents clipping */
+    display: block !important;
+    margin-left: 0 !important;   /* Keeps it aligned to left edge */
+  }
+  
+  .footer-logo-link {
+    transform: none !important;  /* Resets any desktop offsets on mobile */
+    margin-bottom: 16px !important;
+  }
+}
+
+/* Match address styling to the contact links above it */
+.footer-col span {
+  font-size: 0.95rem !important;  /* Matches standard link font size */
+  font-weight: 400 !important;   /* Removes the extra bold weight */
+  line-height: 1.6 !important;
+  opacity: 0.85 !important;      /* Blends naturally with other footer items */
+  display: block;
+  margin-top: 6px;
+}
+
+/* Match footer address font size & line-height exactly to links above */
+.footer-col span {
+  font-size: 0.88rem !important;  /* Matches standard link font size exactly */
+  font-weight: 400 !important;   /* Regular weight */
+  line-height: 1.5 !important;
+  display: block !important;
+  margin-top: 8px !important;
+}
