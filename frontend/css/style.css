@@ -757,7 +757,10 @@ footer span {
 }
 
 
-
+.flat-num {
+  font-weight: 700;                  /* Bold style */
+  font-variant-numeric: lining-nums; /* Keeps numbers flat */
+}
 
 
 
