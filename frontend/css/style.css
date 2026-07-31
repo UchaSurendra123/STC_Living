@@ -721,7 +721,7 @@ footer span {
 }
 
 .footer-logo {
-  height: 60px;
+  height: 150px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -741,15 +741,24 @@ footer span {
   max-width:260px;
 }
 
+
+
 .footer-logo-link{
   display:inline-block;
-  margin-bottom:8px;
+  margin-bottom:4px;
   text-decoration:none;
 }
 
 .footer-logo{
-  height:60px;
+  height:55px;   /* pushed higher to compensate for empty canvas in the SVG */
   width:auto;
   display:block;
   object-fit:contain;
 }
+
+
+
+
+
+
+
