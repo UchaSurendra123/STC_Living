@@ -1,8 +1,4 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ]
+  "outputDirectory": "frontend",
+  "cleanUrls": true
 }
