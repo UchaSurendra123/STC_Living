@@ -1,26 +1,31 @@
 const nodemailer = require('nodemailer');
 
-/**
- * Sends an email via SMTP using credentials from environment variables.
- * Used by contactController to notify the sales team of new enquiries.
- */
-async function sendMail({ to, subject, text }) {
+const sendMail = async ({ to, subject, text, html }) => {
+  const port = Number(process.env.SMTP_PORT) || 465;
+
   const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT) || 587,
-    secure: false,
+    host: process.env.SMTP_HOST || 'smtp.gmail.com',
+    port: port,
+    secure: port === 465, // true for port 465, false for 587
     auth: {
       user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS
-    }
+      pass: process.env.SMTP_PASS,
+    },
+    tls: {
+      // Prevents "self-signed certificate in certificate chain" errors caused by local network proxies/antivirus
+      rejectUnauthorized: false,
+    },
   });
 
-  return transporter.sendMail({
-    from: `"STC Living Website" <${process.env.SMTP_USER}>`,
+  const mailOptions = {
+    from: `"STC Living" <${process.env.SMTP_USER}>`,
     to,
     subject,
-    text
-  });
-}
+    text,
+    html,
+  };
+
+  return await transporter.sendMail(mailOptions);
+};
 
 module.exports = sendMail;
