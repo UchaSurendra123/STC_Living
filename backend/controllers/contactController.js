@@ -1,159 +1,3 @@
-// // // // const nodemailer = require('nodemailer');
-// // // // const Enquiry = require('../models/Enquiry');
-// // // // const sendMail = require('../utils/sendMail');
-
-// // // // /**
-// // // //  * Handles a new enquiry from the contact form.
-// // // //  * Stores it in-memory (swap for a real DB in production) and,
-// // // //  * if SMTP credentials are configured, emails the sales team.
-// // // //  */
-// // // // async function submitEnquiry(req, res) {
-// // // //   try {
-// // // //     const { propertyName, contactName, phone, email, message } = req.body;
-
-// // // //     const enquiry = Enquiry.create({ propertyName, contactName, phone, email, message });
-
-// // // //     // Attempt email notification — non-blocking failure so the
-// // // //     // enquiry is still saved even if SMTP isn't configured yet.
-// // // //     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
-// // // //       try {
-// // // //         await sendMail({
-// // // //           to: process.env.NOTIFY_EMAIL || 'namratha@stcliving.in',
-// // // //           subject: `New enquiry from ${contactName}${propertyName ? ' — ' + propertyName : ''}`,
-// // // //           text: [
-// // // //             `Property: ${propertyName || 'N/A'}`,
-// // // //             `Name: ${contactName}`,
-// // // //             `Phone: ${phone}`,
-// // // //             `Email: ${email}`,
-// // // //             `Message: ${message || 'N/A'}`
-// // // //           ].join('\n')
-// // // //         });
-// // // //       } catch (mailErr) {
-// // // //         console.error('Email notification failed:', mailErr.message);
-// // // //       }
-// // // //     }
-
-// // // //     return res.status(201).json({ success: true, enquiry });
-// // // //   } catch (err) {
-// // // //     console.error(err);
-// // // //     return res.status(500).json({ success: false, error: 'Could not process enquiry' });
-// // // //   }
-// // // // }
-
-// // // // module.exports = { submitEnquiry };
-
-
-
-
-
-
-// // // const Enquiry = require('../models/Enquiry');
-// // // const sendMail = require('../utils/sendMail');
-// // // const config = require('../config/config'); 
-
-// // // async function submitEnquiry(req, res) {
-// // //   try {
-// // //     const { propertyName, contactName, phone, email, message } = req.body;
-
-// // //     // 1. Save enquiry
-// // //     const enquiry = Enquiry.create({ propertyName, contactName, phone, email, message });
-
-// // //     // 2. Check SMTP credentials
-// // //     if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-// // //       console.warn('⚠️ SMTP_USER or SMTP_PASS missing in environment variables. Email was NOT sent.');
-// // //     } else {
-// // //       try {
-// // //         await sendMail({
-// // //           to: config.notifyEmail,
-// // //           subject: `New enquiry from ${contactName}${propertyName ? ' — ' + propertyName : ''}`,
-// // //           text: [
-// // //             `Property: ${propertyName || 'N/A'}`,
-// // //             `Name: ${contactName}`,
-// // //             `Phone: ${phone}`,
-// // //             `Email: ${email}`,
-// // //             `Message: ${message || 'N/A'}`
-// // //           ].join('\n')
-// // //         });
-// // //         console.log(`✅ Enquiry email sent successfully to ${config.notifyEmail}`);
-// // //       } catch (mailErr) {
-// // //         console.error('❌ Email notification failed:', mailErr.message);
-// // //       }
-// // //     }
-
-// // //     return res.status(201).json({ success: true, enquiry });
-// // //   } catch (err) {
-// // //     console.error(err);
-// // //     return res.status(500).json({ success: false, error: 'Could not process enquiry' });
-// // //   }
-// // // }
-
-// // // module.exports = { submitEnquiry };
-
-
-
-
-
-// // const Enquiry = require('../models/Enquiry');
-// // const sendMail = require('../utils/sendMail');
-
-// // async function submitEnquiry(req, res) {
-// //   try {
-// //     // Log incoming body to terminal so you can see what the frontend sends
-// //     console.log('📥 Incoming enquiry request body:', req.body);
-
-// //     const { propertyName, contactName, name, phone, email, message } = req.body;
-
-// //     // Handle cases where frontend sends 'name' instead of 'contactName'
-// //     const finalContactName = contactName || name || 'Anonymous User';
-
-// //     // 1. Save enquiry
-// //     const enquiry = Enquiry.create({ 
-// //       propertyName, 
-// //       contactName: finalContactName, 
-// //       phone, 
-// //       email, 
-// //       message 
-// //     });
-
-// //     const recipientEmail = process.env.NOTIFY_EMAIL || 'namratha@stcliving.in';
-
-// //     // 2. Check SMTP variables
-// //     if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-// //       console.warn('⚠️ SMTP credentials missing in .env file!');
-// //     } else {
-// //       try {
-// //         await sendMail({
-// //           to: recipientEmail,
-// //           subject: `New enquiry from ${finalContactName}${propertyName ? ' — ' + propertyName : ''}`,
-// //           text: [
-// //             `Property: ${propertyName || 'N/A'}`,
-// //             `Name: ${finalContactName}`,
-// //             `Phone: ${phone || 'N/A'}`,
-// //             `Email: ${email || 'N/A'}`,
-// //             `Message: ${message || 'N/A'}`
-// //           ].join('\n')
-// //         });
-// //         console.log(`✅ Enquiry email sent successfully to ${recipientEmail}`);
-// //       } catch (mailErr) {
-// //         console.error('❌ Email notification failed:', mailErr);
-// //       }
-// //     }
-
-// //     return res.status(201).json({ success: true, enquiry });
-// //   } catch (err) {
-// //     console.error('❌ Controller error:', err);
-// //     return res.status(500).json({ success: false, error: 'Could not process enquiry' });
-// //   }
-// // }
-
-// // module.exports = { submitEnquiry };
-
-
-
-
-
-
-
 // const Enquiry = require('../models/Enquiry');
 // const sendMail = require('../utils/sendMail');
 
@@ -177,7 +21,7 @@
 //     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
 //       try {
 //         // Professional Plain Text Fallback
-//         const textContent = `Client Enquiry\n\n` +
+//         const textContent = `New Client Enquiry\n\n` +
 //           `Name: ${finalContactName}\n` +
 //           `Phone: ${phone || 'N/A'}\n` +
 //           `Email: ${email || 'N/A'}\n` +
@@ -210,8 +54,8 @@
 //           <body>
 //             <div class="container">
 //               <div class="header">
-//                 <h2>Client Enquiry</h2>
-//                 <p>Received via STC Living Contact Form</p>
+//                 <h2>New Client Enquiry Notification</h2>
+//                 <p>Submitted via STC Living Official Portal</p>
 //               </div>
 //               <div class="content">
 //                 <table class="table">
@@ -234,12 +78,12 @@
 //                 </table>
 
 //                 <div class="message-box">
-//                   <label>Message / Note</label>
+//                   <label>Customer Message</label>
 //                   <p>${message || 'No additional message provided.'}</p>
 //                 </div>
 //               </div>
 //               <div class="footer">
-//                 STC Living Automated Notification Service
+//                 STC Living — Automated System Notification
 //               </div>
 //             </div>
 //           </body>
@@ -248,7 +92,7 @@
 
 //         await sendMail({
 //           to: recipientEmail,
-//           subject: `New Enquiry: ${finalContactName} (${finalPropertyName})`,
+//           subject: `New Client Enquiry: ${finalContactName} — ${finalPropertyName}`,
 //           text: textContent,
 //           html: htmlContent
 //         });
@@ -270,6 +114,9 @@
 
 
 
+
+
+
 const Enquiry = require('../models/Enquiry');
 const sendMail = require('../utils/sendMail');
 
@@ -279,8 +126,8 @@ async function submitEnquiry(req, res) {
     const finalContactName = contactName || name || 'Valued Visitor';
     const finalPropertyName = propertyName || 'STC Living';
 
-    // 1. Save enquiry
-    const enquiry = Enquiry.create({ 
+    // 1. Fixed: Added await to prevent premature responses
+    const enquiry = await Enquiry.create({ 
       propertyName: finalPropertyName, 
       contactName: finalContactName, 
       phone, 
@@ -292,7 +139,6 @@ async function submitEnquiry(req, res) {
 
     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
       try {
-        // Professional Plain Text Fallback
         const textContent = `New Client Enquiry\n\n` +
           `Name: ${finalContactName}\n` +
           `Phone: ${phone || 'N/A'}\n` +
@@ -300,7 +146,6 @@ async function submitEnquiry(req, res) {
           `Property: ${finalPropertyName}\n` +
           `Message: ${message || 'N/A'}\n`;
 
-        // Professional HTML Template
         const htmlContent = `
           <!DOCTYPE html>
           <html>
