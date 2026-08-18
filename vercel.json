@@ -1,13 +1,19 @@
 {
   "version": 2,
-  "rewrites": [
+  "functions": {
+    "backend/server.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  },
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/backend/server.js"
+      "src": "/api/(.*)",
+      "dest": "backend/server.js"
     },
     {
-      "source": "/(.*)",
-      "destination": "/frontend/$1"
+      "src": "/(.*)",
+      "dest": "frontend/$1"
     }
   ]
 }
